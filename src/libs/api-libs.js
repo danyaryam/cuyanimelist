@@ -15,6 +15,12 @@ export const getMangaResponse = async(resource, query) => {
     return manga
 }
 
+export const getStreamingResponse = async(resource) => {
+    const respon = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}`)
+    const streaming = await respon.json()
+    return streaming
+}
+
 export const reproduce = (data, gap) => {
     const first = ~~(Math.random() * (data.length - gap) + 1)
     const last = first + gap
