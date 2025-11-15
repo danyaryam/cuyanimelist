@@ -1,24 +1,30 @@
-export const getAnimeResponse = async(resource, query) => {
+export const getAnimeResponse = async (resource, query) => {
     const respon = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?${query}`)
     const anime = await respon.json()
     return anime
 }
 
-export const getNestedAnimeResponse = async(resource, objectProperty) => {
+export const getNestedAnimeResponse = async (resource, objectProperty) => {
     const respon = await getAnimeResponse(resource)
     return respon.data.flatMap(item => item[objectProperty])
 }
 
-export const getMangaResponse = async(resource, query) => {
+export const getMangaResponse = async (resource, query) => {
     const respon = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?${query}`)
     const manga = await respon.json()
     return manga
 }
 
-export const getStreamingResponse = async(resource) => {
+export const getStreamingResponse = async (resource) => {
     const respon = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}`)
     const streaming = await respon.json()
     return streaming
+}
+
+export const getGenresResponse = async (resource) => {
+    const respon = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}`)
+    const genres = await respon.json()
+    return genres
 }
 
 export const reproduce = (data, gap) => {
