@@ -2,36 +2,33 @@
 
 import { MagnifyingGlass } from "@phosphor-icons/react"
 import { useRouter } from "next/navigation"
-import { useRef } from "react"
+import { useState } from "react"
 
-const InputSearch = () => {
-    const searchRef = useRef()
+export default function InputSearch() {
+    const [keyword, setKeyword] = useState("")
     const router = useRouter()
 
-    const handleSearch = (event) => {
-        const keyword = searchRef.current.value
+    const handleSubmit = (e) => {
+        e.preventDefault()
 
-        if(!keyword || keyword.trim() == "") return
+        if (!keyword.trim()) return
 
-        if(event.key === "Enter" || event.type === "click") {
-            event.preventDefault()    
-            router.push(`/search/${keyword}`)
-        }
+        router.push(`/search/${encodeURIComponent(keyword.trim())}`)
     }
 
     return (
-        <div className="relative" >
+        <form onSubmit={handleSubmit} className="relative">
             <input
+                type="text"
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
                 placeholder="Cari Anime..."
                 className="w-full p-2 rounded"
-                ref={searchRef}
-                onKeyDown={handleSearch}
             />
-            <button className="absolute top-2 end-3" onClick={handleSearch}>
+
+            <button type="submit" className="absolute top-2 right-3">
                 <MagnifyingGlass size={22} />
             </button>
-        </div>
+        </form>
     )
 }
-
-export default InputSearch

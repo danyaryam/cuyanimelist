@@ -28,10 +28,19 @@ const Footer = () => {
                                         <Link href="/" className="hover:text-white transition">Home</Link>
                                     </li>
                                     <li>
-                                        <Link href="/about" className="hover:text-white transition">About</Link>
+                                        <Link href="/anime" className="hover:text-white transition">Anime</Link>
                                     </li>
                                     <li>
-                                        <Link href="/room" className="hover:text-white transition">Rooms</Link>
+                                        <Link href="/manga" className="hover:text-white transition">Manga</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/genre/anime" className="hover:text-white transition">Genres Anime</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/genre/manga" className="hover:text-white transition">Genres Manga</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/about" className="hover:text-white transition">About</Link>
                                     </li>
                                     <li>
                                         <Link href="/contact" className="hover:text-white transition">Contact</Link>
@@ -46,9 +55,6 @@ const Footer = () => {
                                     </li>
                                     <li>
                                         <Link href="#" className="hover:text-white transition">Terms of Service</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#" className="hover:text-white transition">Payments Method</Link>
                                     </li>
                                     <li>
                                         <Link href="#" className="hover:text-white transition">Privacy Policy</Link>

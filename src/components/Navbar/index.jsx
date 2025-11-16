@@ -30,7 +30,7 @@ const Navbar = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
-                            <ul className="absolute left-0 mt-2 w-40 py-2 bg-color-accent border border-gray-700 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <ul className="absolute left-0 mt-2 w-40 py-2 bg-color-accent border border-gray-700 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                                 <li>
                                     <Link href="/genres/anime" className="block px-4 py-2 hover:bg-gray-800 transition">
                                         Anime
